@@ -15,23 +15,6 @@ app.listen(3003, () => {
   console.log(`Servidor rodando na porta ${3003}`);
 });
 
-app.get("/ping", async (req: Request, res: Response) => {
-  try {
-    res.status(200).send({ message: "Pong!!" });
-  } catch (error) {
-    console.log(error);
-
-    if (req.statusCode === 200) {
-      res.status(500);
-    }
-
-    if (error instanceof Error) {
-      res.send(error.message);
-    } else {
-      res.send("Erro inesperado");
-    }
-  }
-});
 
 const video1 = new Video("v001", "Video 1", 200, "17/04/2023");
 console.log(video1);
@@ -194,3 +177,5 @@ app.delete("/videos/:id", async (req: Request, res: Response) => {
     }
   }
 });
+
+// comentario
